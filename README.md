@@ -121,3 +121,14 @@ for face in faces:
         end = vertices[face[(i + 1) % len(face)]]
         pygame.draw.line(screen, COLOR, start, end)
 ```
+# Project Structure
+
+```
+3d-graphics-engine/
+├── 3d_engine.py          # Main engine implementation
+├── shapes.py            # 3D shape definitions (cube, pyramid, etc.)
+├── math_utils.py        # Math helper functions
+├── README.md           # This file
+└── requirements.txt    # Dependencies
+```
+
