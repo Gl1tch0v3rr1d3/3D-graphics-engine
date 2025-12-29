@@ -125,9 +125,7 @@ for face in faces:
 
 ```
 3d-graphics-engine/
-├── 3d_engine.py          # Main engine implementation
-├── shapes.py            # 3D shape definitions (cube, pyramid, etc.)
-├── math_utils.py        # Math helper functions
+├── v1.py          # Main engine implementation
 ├── README.md           # This file
 └── requirements.txt    # Dependencies
 ```
