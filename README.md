@@ -43,8 +43,8 @@ R: Reset rotation
 
 ESC: Exit
 
-## Mathematical Pipeline
-# 1. Vertex Representation (Model Space)
+# Mathematical Pipeline
+##  1. Vertex Representation (Model Space)
 Each vertex is represented as:
 
 ```python
@@ -52,7 +52,7 @@ Each vertex is represented as:
 ```
 All coordinates are centered around the origin (0, 0, 0) in normalized 3D space.
 
-# 2. Rotation (XZ Plane / Y-Axis Rotation)
+##  2. Rotation (XZ Plane / Y-Axis Rotation)
 Rotation is applied in the XZ plane (around Y-axis):
 
 ```python
@@ -60,7 +60,7 @@ x' = x * cos(θ) - z * sin(θ)
 z' = x * sin(θ) + z * cos(θ)
 y' = y
 ```
-#  Implementation:
+##   Implementation:
 
 ```python
 c = math.cos(angle)
@@ -69,7 +69,7 @@ x_new = x * c - z * s
 z_new = x * s + z * c
 ```
 
-#  Translation Along Z-Axis (Camera Distance)
+##   Translation Along Z-Axis (Camera Distance)
 To ensure valid perspective projection:
 
 ```python
@@ -78,19 +78,19 @@ z' = z + d
 Where d is the camera distance.
 
 
-#  Implementation:
+# #  Implementation:
 
 ``` python
 translated_vertex = {'z': vertex['z'] + camera_distance}
 ```
-#  4. Perspective Projection (3D → 2D)
+##   4. Perspective Projection (3D → 2D)
 Perspective division creates depth perception:
 
 ```python
 x_proj = x / z
 y_proj = y / z
 ```
-#  Implementation:
+##   Implementation:
 
 ```python
 projected = {
@@ -98,20 +98,20 @@ projected = {
     'y': vertex['y'] / vertex['z']
 }
 ```
-#  5. Screen Space Mapping
+##   5. Screen Space Mapping
 Normalized coordinates [-1, 1] → screen pixels:
 
 ```python
 x_screen = (x + 1) / 2 * WIDTH
 y_screen = (1 - (y + 1) / 2) * HEIGHT
 ```
-#  Implementation:
+##  Implementation:
 
 ```python
 x_pixel = (projected['x'] + 1) / 2 * SCREEN_WIDTH
 y_pixel = (1 - (projected['y'] + 1) / 2) * SCREEN_HEIGHT
 ```
-#  6. Wireframe Rendering
+##  6. Wireframe Rendering
 Faces are defined as vertex indices. Edges connect consecutive vertices:
 
 ```python
