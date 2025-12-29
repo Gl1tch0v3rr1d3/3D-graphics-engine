@@ -33,14 +33,6 @@ pip install pygame
 ```
 
 ## Controls
-- R: Reset rotation
-
-- ↑/↓: Increase/decrease rotation speed
-
-- ←/→: Change camera distance
-
-- 1/2/3: Switch between different 3D models
-
 - ESC: Exit
 
 # Mathematical Pipeline
