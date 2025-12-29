@@ -25,11 +25,8 @@ A simple 3D wireframe rendering engine built with Pygame, featuring real-time ro
 ### Setup
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/3D-graphics-engine.git
+git clone https://github.com/Gl1tch0v3rr1d3/3D-graphics-engine.git
 cd 3D-graphics-engine
-
-# Install dependencies
-pip install pygame
 ```
 
 ## Controls
