@@ -164,6 +164,7 @@ engine.run()
 
 # Acknowledgements
 - Inspired by Tsoding - For the mathematical foundations
+### Made by ShadowRoot17
 
 ### Star this repo if you found it useful!
 
