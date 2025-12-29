@@ -47,65 +47,77 @@ ESC: Exit
 # 1. Vertex Representation (Model Space)
 Each vertex is represented as:
 
-python
+```python
 {'x': x, 'y': y, 'z': z}
+```
 All coordinates are centered around the origin (0, 0, 0) in normalized 3D space.
 
 2. Rotation (XZ Plane / Y-Axis Rotation)
 Rotation is applied in the XZ plane (around Y-axis):
 
-text
+```python
 x' = x * cos(θ) - z * sin(θ)
 z' = x * sin(θ) + z * cos(θ)
 y' = y
+```
 Implementation:
 
-python
+```python
 c = math.cos(angle)
 s = math.sin(angle)
 x_new = x * c - z * s
 z_new = x * s + z * c
+```
+
 3. Translation Along Z-Axis (Camera Distance)
 To ensure valid perspective projection:
 
-text
+```python
 z' = z + d
+```
 Where d is the camera distance.
+
 
 Implementation:
 
-python
+``` python
 translated_vertex = {'z': vertex['z'] + camera_distance}
+```
 4. Perspective Projection (3D → 2D)
 Perspective division creates depth perception:
 
-text
+```python
 x_proj = x / z
 y_proj = y / z
+```
 Implementation:
 
-python
+```python
 projected = {
     'x': vertex['x'] / vertex['z'],
     'y': vertex['y'] / vertex['z']
 }
+```
 5. Screen Space Mapping
 Normalized coordinates [-1, 1] → screen pixels:
 
-text
+```python
 x_screen = (x + 1) / 2 * WIDTH
 y_screen = (1 - (y + 1) / 2) * HEIGHT
+```
 Implementation:
 
-python
+```python
 x_pixel = (projected['x'] + 1) / 2 * SCREEN_WIDTH
 y_pixel = (1 - (projected['y'] + 1) / 2) * SCREEN_HEIGHT
+```
 6. Wireframe Rendering
 Faces are defined as vertex indices. Edges connect consecutive vertices:
 
-python
+```python
 for face in faces:
     for i in range(len(face)):
         start = vertices[face[i]]
         end = vertices[face[(i + 1) % len(face)]]
         pygame.draw.line(screen, COLOR, start, end)
+```
