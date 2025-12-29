@@ -7,7 +7,7 @@ A simple 3D wireframe rendering engine built with Pygame, featuring real-time ro
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
 
-## ✨ eatures
+##  eatures
 
 - Real-time 3D wireframe rendering
 - Smooth Y-axis rotation animation
@@ -33,15 +33,15 @@ pip install pygame
 ```
 
 ## Controls
-R: Reset rotation
+- R: Reset rotation
 
-↑/↓: Increase/decrease rotation speed
+- ↑/↓: Increase/decrease rotation speed
 
-←/→: Change camera distance
+- ←/→: Change camera distance
 
-1/2/3: Switch between different 3D models
+- 1/2/3: Switch between different 3D models
 
-ESC: Exit
+- ESC: Exit
 
 # Mathematical Pipeline
 ##  1. Vertex Representation (Model Space)
