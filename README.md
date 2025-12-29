@@ -131,4 +131,35 @@ for face in faces:
 ├── README.md           # This file
 └── requirements.txt    # Dependencies
 ```
+# Supported 3D Models
+- triangle (default)
+- anything
+- Custom shapes (easily extendable)
 
+# Example Code
+## Create a cube
+```python
+cube_vertices = [
+    {'x': -1, 'y': -1, 'z': -1},
+    {'x': 1, 'y': -1, 'z': -1},
+    # ... more vertices
+]
+
+cube_faces = [
+    [0, 1, 2, 3],  # Front face
+    [4, 5, 6, 7],  # Back face
+    # ... more faces
+]
+
+# Initialize engine
+engine = Engine3D(vertices=cube_vertices, faces=cube_faces)
+engine.run()
+```
+#Performance
+- Rendering: 60 FPS target
+- Max vertices: 1000+ on modern hardware
+- Memory: Minimal footprint
+- CPU usage: Single-threaded, optimized for clarity
+
+# Contributing
+- Contributions are welcome! Please feel free to submit a Pull Request.
