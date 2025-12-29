@@ -155,7 +155,7 @@ cube_faces = [
 engine = Engine3D(vertices=cube_vertices, faces=cube_faces)
 engine.run()
 ```
-#Performance
+# Performance
 - Rendering: 60 FPS target
 - Max vertices: 1000+ on modern hardware
 - Memory: Minimal footprint
@@ -163,3 +163,9 @@ engine.run()
 
 # Contributing
 - Contributions are welcome! Please feel free to submit a Pull Request.
+
+# Acknowledgements
+- Inspired by Tsoding - For the mathematical foundations
+
+### Star this repo if you found it useful!
+
